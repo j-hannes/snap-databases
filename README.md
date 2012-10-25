@@ -1,22 +1,24 @@
-Overview over Haskell data types
-================================
+Uebersicht ueber Haskell Datentypen
+===================================
 
-Brief example of some Haskell data structures.
+So etwa koennte eine Modellierung eines Datenmodells in das Haskell Typsystem
+stattfinden:
 
 
-Scenario
+Szenario
 --------
 
-The following diagram gives an overview over entities in the usage scenario.
+Ein ERD eines Anwendungsszenarios, nur als Beispiel, wird wahrscheinlich noch
+'ummodelliert'.
 
 ![ERD](https://github.com/J-Hannes/snap-databases/blob/master/DataModel.png?raw=true)
 
 
-Haskell DS
-----------
+Haskell Datentypen
+------------------
 
-This could be converted to the following Haskell data structures (example,
-snippet):
+Die Entitaeten koennten dann zum Beispiel so in Haskell modelliert werden
+(hier mit Attributen). Diese entsprechen algrbraischen Datentypen
 
 ```haskell
 data User = User
@@ -36,12 +38,6 @@ data Tutor = Tutor
   , tasks   :: [Task]
   }
 
-data Student = Student
-  { user        :: User
-  , solutions   :: [Solution]
-  , enrollments :: [Enrollment]
-  }
-
 ------------------------------------------------------------------------------
 data Course = Course
   , coursename  :: String
@@ -53,7 +49,6 @@ data Course = Course
 
 data Semester = SS12
 
-
 ------------------------------------------------------------------------------
 data Assignment = Assignment
   { status            :: Status
@@ -61,7 +56,6 @@ data Assignment = Assignment
   }
 
 data Status = Mandatory | Optional
-
 
 ------------------------------------------------------------------------------
 data Task = Task
@@ -73,36 +67,20 @@ data Task = Task
   , assignments :: [Assignment]
   }
 
-data Scoring = Increasing | Decreasing | None
+-- etc.
 
-
-------------------------------------------------------------------------------
-data Solution = Solution
-  { task    :: Task
-  , content :: String
-  , score   :: Int
-  , time    :: UTCTime
-  }
-
-
-------------------------------------------------------------------------------
-data Enrollment =
-  { time    :: UTCTime
-  }
-
-
-------------------------------------------------------------------------------
-data Group = Group
-  { course      :: Course
-  , groupname   :: String
-  , capacity    :: Capacity
-  , enrollments :: [Enrollment]
-  }
-
-
-------------------------------------------------------------------------------
-data TimeFrame = TimeFrame
-  { from :: UTCTime
-  , to   :: UTCTime
-  }
 ```
+
+Mehr Informationen zum Weiterlesen gibt es zum Beispiel
+[hier](http://learnyouahaskell.com/making-our-own-types-and-typeclasses) (sehr
+gut verstaendliche Referenz im Uebrigen).
+
+
+
+Interpretation
+--------------
+
+Vielleicht koennten man diese Datenstrukturen auch mit Records in der JSON
+Notation vergleichen.
+
+
