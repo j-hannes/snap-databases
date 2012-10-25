@@ -7,4 +7,4 @@ Brief example of some Haskell data structures.
 Scenario
 --------
 
-thu
+The following diagram describes 
