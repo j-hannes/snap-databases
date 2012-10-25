@@ -19,7 +19,10 @@ in Haskell eine zentrale Rolle.
 Szenario
 --------
 
-Ein ERD des Anwendungsszenarios (eine Variante).
+Ein Modell des Anwendungsszenarios, (noch) nicht UML konform, die Pfeile
+koennen hier jedoch als 1:n Beziehungen interpretiert werden (z.B. ein Tutor
+hat viele Aufgaben, eine Aufgabe ist von einem Tutor erstellt worden). n:m
+Beziehungen (z.B. zwischen Student und Gruppe) sind dabei aufgeloest worden.
 
 ![ERD](https://github.com/J-Hannes/snap-databases/blob/master/DataModel.png?raw=true)
 
